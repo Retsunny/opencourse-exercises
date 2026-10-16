@@ -1,0 +1,14 @@
+---
+config:
+  theme: dark
+---
+sequenceDiagram
+    participant browser
+    participant server
+
+    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+    activate server
+    server-->>browser: {content: "test2", date: "2026-10-16T11:18:23.861Z"}
+    deactivate server
+
+    Note right of browser: The browser uses the javascript code previously retrieved to render the notes again whitout reloading the entire page
